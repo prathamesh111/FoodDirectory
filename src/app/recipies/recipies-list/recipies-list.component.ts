@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { RecipieService } from '../recipies.service';
 
 @Component({
   selector: 'app-recipies-list',
@@ -8,16 +9,15 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipiesListComponent implements OnInit {
 
-  recipies : Recipe[] = [
-    new Recipe('prathamehsh', 'tet', 'https://2.bp.blogspot.com/-GAyJEu7QA_Q/WGIbZMqbaWI/AAAAAAAAADw/DTQKC47jlyMs0PIsepvCzhFFjxJiXSNQwCLcB/s1600/veg-maharaja-mac_McDonaldsIndia_071216-.jpg'),
-    new Recipe('prathamehsh', 'tet', 'https://2.bp.blogspot.com/-GAyJEu7QA_Q/WGIbZMqbaWI/AAAAAAAAADw/DTQKC47jlyMs0PIsepvCzhFFjxJiXSNQwCLcB/s1600/veg-maharaja-mac_McDonaldsIndia_071216-.jpg'),
-    
-  ];
+  recipies : Recipe[] ;
+  constructor( private recipeService : RecipieService) { }
 
 
-  constructor() { }
 
-  ngOnInit(): void {
+
+  ngOnInit() {
+   this.recipies= this.recipeService.getRecipies();
+  //  console.log(this.recipies);
   }
 
 }

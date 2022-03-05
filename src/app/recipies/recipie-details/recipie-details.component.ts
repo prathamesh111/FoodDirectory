@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Recipe } from '../recipe.model';
 
 @Component({
   selector: 'app-recipie-details',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class RecipieDetailsComponent implements OnInit {
-  
+  name='';
   cities = [];
+  @Input() recipe : Recipe;
   constructor() {
     this.cities = [
       {name: 'To shopping List', code: 'NY'},

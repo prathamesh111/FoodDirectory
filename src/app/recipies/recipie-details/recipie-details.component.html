@@ -5,7 +5,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1>Recipie name</h1>
+        <h1>{{recipe.name}}</h1>
     </div>
 </div>
 <div class="row">
@@ -16,7 +16,7 @@
               Dropdown button
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">To shopping List</a>
               <a class="dropdown-item" href="#">Another action</a>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
@@ -25,11 +25,8 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        description
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
-        ingredients
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of recipe.ingredients">{{item.name}} - {{item.amount}}</li>
+        </ul>
     </div>
 </div>

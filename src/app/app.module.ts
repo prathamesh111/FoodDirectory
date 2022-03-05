@@ -16,6 +16,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { ShoppingListService } from './shopping-list/shoppingList.service';
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
