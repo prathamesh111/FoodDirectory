@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter } from '@angular/core';
+import { Recipe } from '../recipe.model';
+import { RecipieService } from '../recipies.service';
 
 @Component({
   selector: 'app-recipie-details',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class RecipieDetailsComponent implements OnInit {
-  
+  name='';
   cities = [];
-  constructor() {
+
+  @Input() recipe : Recipe;
+
+  constructor(private RecipieService : RecipieService) {
     this.cities = [
       {name: 'To shopping List', code: 'NY'},
       {name: 'Edit Recipe', code: 'RM'},
@@ -17,7 +22,13 @@ export class RecipieDetailsComponent implements OnInit {
   ];
    }
 
-  ngOnInit(): void {
+   addToShoppingList(){
+     this.RecipieService.addingredToShopList(this.recipe.ingredients);
+   }
+   
+
+  ngOnInit() {
+
   }
 
 }
