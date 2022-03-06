@@ -30,10 +30,10 @@ export class RecipieService{
         ]),
   ];
 
-  getRecipies(){
-      return this.recipies.slice();
-  }
-  addingredToShopList(ingredient : Ingredients[]){
-    this.ShoppingListService.addIngredients(ingredient);
-  }
+      getRecipies(){
+          return this.recipies.slice();
+      }
+      addingredToShopList(ingredient : Ingredients[]){
+        this.ShoppingListService.addIngredients(ingredient);
+      }
 }
