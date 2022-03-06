@@ -17,6 +17,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shoppingList.service';
+import { Route, RouterModule, Routes,  } from '@angular/router';
+
+const appRoutes: Routes = [
+  {path:'', component:RecipiesComponent},
+  {path:'recipies', component:RecipiesComponent},
+  {path:'shopping-list', component:ShoppingListComponent}
+]
 
 
 @NgModule({
@@ -38,7 +45,8 @@ import { ShoppingListService } from './shopping-list/shoppingList.service';
     InputTextModule,
     DropdownModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]
