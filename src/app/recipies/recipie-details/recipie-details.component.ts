@@ -19,7 +19,7 @@ export class RecipieDetailsComponent implements OnInit {
       {name: 'To shopping List', code: 'NY'},
       {name: 'Edit Recipe', code: 'RM'},
       {name: 'Delete Recipe', code: 'LDN'},
-  ];
+    ];
    }
 
    addToShoppingList(){

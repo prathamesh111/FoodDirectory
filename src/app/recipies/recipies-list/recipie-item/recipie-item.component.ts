@@ -17,6 +17,7 @@ export class RecipieItemComponent implements OnInit {
 
   onSelect(){
     this.recipeService.recipeSelected.emit(this.recipe);
+
     
   }
 
