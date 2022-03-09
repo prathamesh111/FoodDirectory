@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
+import { ActivatedRoute ,Params, Router} from '@angular/router';
 import { Recipe } from '../recipe.model';
 import { RecipieService } from '../recipies.service';
 
@@ -11,10 +12,10 @@ import { RecipieService } from '../recipies.service';
 export class RecipieDetailsComponent implements OnInit {
   name='';
   cities = [];
+  id:number;
+  recipe : Recipe;
 
-  @Input() recipe : Recipe;
-
-  constructor(private RecipieService : RecipieService) {
+  constructor(private RecipieService : RecipieService, private route : ActivatedRoute, private router : Router) {
     this.cities = [
       {name: 'To shopping List', code: 'NY'},
       {name: 'Edit Recipe', code: 'RM'},
@@ -28,6 +29,18 @@ export class RecipieDetailsComponent implements OnInit {
    
 
   ngOnInit() {
+    this.route.params
+    .subscribe(
+      (params : Params) => {
+        this.id = +params['id'];
+        this.recipe = this.RecipieService.getRecipe(this.id);
+
+      }
+    );
+  }
+
+  gotoEdit(){
+    this.router.navigate(['edit'], {relativeTo:this.route});
 
   }
 
