@@ -9,12 +9,6 @@ export class AppComponent {
   title = 'foodie';
   loadedFeature = "recipe"
   ngOnInit(){
-    console.log(this.loadedFeature);
   }
-
-navigateMe(feature:string){
-  this.loadedFeature = feature;
-  
-}
 
 }
