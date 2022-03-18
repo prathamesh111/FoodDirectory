@@ -44,4 +44,9 @@ export class RecipieDetailsComponent implements OnInit {
 
   }
 
+  deleteRecipe(){
+    this.RecipieService.deleteRecipe(this.id);
+    this.router.navigate(['/recipies']);
+  }
+
 }
