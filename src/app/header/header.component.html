@@ -29,11 +29,15 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Link</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li routerLinkActive="active"><a href="#" (click) = "onselect('recipe')">Recepies</a></li>
-              <li routerLinkActive="active"><a href="#" (click) = "onselect('shopping')">Shopping List</a></li>
-            </ul>
+            <div class="dropdown">
+              <button (click)="onAction()" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+              </button>
+              <div class="dropdown-menu {{isActionActive ? 'show' : ''}}" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Save Data</a>
+                <a class="dropdown-item" href="#">Fetch Data</a>
+              </div>
+            </div>
           </li>
         </ul>
       </div><!-- /.navbar-collapse -->
