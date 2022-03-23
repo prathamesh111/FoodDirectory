@@ -34,8 +34,8 @@
                 Dropdown button
               </button>
               <div class="dropdown-menu {{isActionActive ? 'show' : ''}}" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Save Data</a>
-                <a class="dropdown-item" href="#">Fetch Data</a>
+                <a class="dropdown-item" (click) = "onSaveData()">Save Data</a>
+                <a class="dropdown-item" (click) = "onFetch()">Fetch Data</a>
               </div>
             </div>
           </li>
