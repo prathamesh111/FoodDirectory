@@ -32,7 +32,7 @@ export class HeaderComponent{
     }
 
     onFetch(){
-        this.DataStorageService.fetchData();
+        this.DataStorageService.fetchData().subscribe();
     }
 
 }
