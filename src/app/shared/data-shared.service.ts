@@ -12,7 +12,7 @@ export class DataStorageService{
     storeRecepies(){
       const recepies=  this.recepiService.getRecipies();
       this.HttpClient.put('https://foodie-app-c2cd1-default-rtdb.firebaseio.com/recepies.json', recepies).subscribe((response)=>{
-        // console.log(response);
+        console.log(response);
       })
     }
 
