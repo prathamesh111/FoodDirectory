@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './auth/auth.guard';
 import { RecipeEditComponent } from './recipies/recipe-edit/recipe-edit.component';
 import { RecipeStartComponent } from './recipies/recipe-start/recipe-start.component';
 import { RecipieDetailsComponent } from './recipies/recipie-details/recipie-details.component';
@@ -9,14 +11,13 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 const appRoutes: Routes = [
   {path:'', redirectTo:'/recipies' ,pathMatch : 'full'},
-  {path:'recipies', component:RecipiesComponent, children:[
+  {path:'recipies', component:RecipiesComponent, canActivate:[AuthGuard], children:[
     {path:'', component:RecipeStartComponent},
     {path:'new', component:RecipeEditComponent},
     {path:':id', component:RecipieDetailsComponent, resolve:[RecipeResolverService]},
     {path:':id/edit', component:RecipeEditComponent, resolve:[RecipeResolverService]}
   ]},
-  
-  
+  {path :'auth', component:AuthComponent},
   {path:'shopping-list', component:ShoppingListComponent}
 ]
 

@@ -13,9 +13,10 @@
   
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li routerLinkActive="active"><a routerLink="recipies" (click) = "onselect('recipe')">Recepies</a></li>
-          <li routerLinkActive="active"><a routerLink="shopping-list" (click) = "onselect('shopping')">Shopping List</a></li>
+        <ul class="nav navbar-nav" >
+          <li *ngIf="isAuthenticated" routerLinkActive="active"><a routerLink="recipies" (click) = "onselect('recipe')">Recepies</a></li>
+          <li *ngIf="!isAuthenticated" routerLinkActive="active"><a routerLink="shopping-list" (click) = "onselect('shopping')">Shopping List</a></li>
+          <li *ngIf="!isAuthenticated" routerLinkActive="active"><a routerLink="auth" (click) = "onselect('shopping')">auth</a></li>
         </ul>
         <form class="navbar-form navbar-left">
           <div class="form-group">
@@ -27,13 +28,15 @@
           <button pButton type="button" label="Primary"></button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
+          <li>
+            <div *ngIf="isAuthenticated" (click)="onLogOut()" style="cursor: pointer;">Log Out</div>
+          </li>
+          <li  *ngIf="isAuthenticated" class="dropdown">
             <div class="dropdown">
               <button (click)="onAction()" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown button
               </button>
-              <div class="dropdown-menu {{isActionActive ? 'show' : ''}}" aria-labelledby="dropdownMenuButton">
+              <div class="dropdown-menu {{isActionActive ? 'show' : ''}}" aria-labelledby="dropdownMenuButton"> 
                 <a class="dropdown-item" (click) = "onSaveData()">Save Data</a>
                 <a class="dropdown-item" (click) = "onFetch()">Fetch Data</a>
               </div>

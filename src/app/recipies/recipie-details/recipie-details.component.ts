@@ -23,25 +23,23 @@ export class RecipieDetailsComponent implements OnInit {
     ];
    }
 
-   addToShoppingList(){
-     this.RecipieService.addingredToShopList(this.recipe.ingredients);
-   }
-   
-
-  ngOnInit() {
+   ngOnInit() {
     this.route.params
     .subscribe(
       (params : Params) => {
         this.id = +params['id'];
         this.recipe = this.RecipieService.getRecipe(this.id);
-
       }
     );
   }
 
+   addToShoppingList(){
+     this.RecipieService.addingredToShopList(this.recipe.ingredients);
+   }
+
+
   gotoEdit(){
     this.router.navigate(['edit'], {relativeTo:this.route});
-
   }
 
   deleteRecipe(){
