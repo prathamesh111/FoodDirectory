@@ -25,6 +25,8 @@ import { RecipeEditComponent } from './recipies/recipe-edit/recipe-edit.componen
 import {AuthComponent} from './auth/auth.component';
 import { LoadingSpinner } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor';
+import { AlertComponent } from './shared/alert/alert.component';
+import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { AuthInterceptorService } from './auth/auth-interceptor';
     RecipeStartComponent,
     RecipeEditComponent,
     AuthComponent,
-    LoadingSpinner
+    LoadingSpinner,
+    AlertComponent,
+    PlaceHolderDirective
   ],
   imports: [
     BrowserModule,
