@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule} from "@angular/forms";
 import { ShoppingListEditComponent } from "./shopping-list-edit/shopping-list-edit.component";
 import { ShoppingListComponent } from "./shopping-list.component";
 import { ShoppingListRoutingModule } from "./shoppingList-routing.module";
@@ -13,7 +13,7 @@ declarations : [
 imports : [
     FormsModule,
     CommonModule,
-    ShoppingListRoutingModule
+    ShoppingListRoutingModule,
 ]
 })
 
