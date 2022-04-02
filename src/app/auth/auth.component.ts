@@ -47,9 +47,10 @@ export class AuthComponent implements OnDestroy{
             this.isLoading = false;
             this.router.navigate(['/recipies']);
         }, errorMessage => {
-            this.error = errorMessage;     
+            this.error = errorMessage;
+            console.log(this.error); 
             this.isLoading = false;
-            this.showError(errorMessage);
+            // this.showError(errorMessage);
         });
 
         form.reset();
@@ -59,18 +60,18 @@ export class AuthComponent implements OnDestroy{
         this.error = null;
     }
 
-    showError(message : string){
-      const alertCmpFactory=      this.componentFactoryResolver.resolveComponentFactory(AlertComponent);
-      const HostviewContainerRef = this.alertHost.viewContainerRef;
-      HostviewContainerRef.clear();
-        const compRef =  HostviewContainerRef.createComponent(alertCmpFactory);
-        compRef.instance.message = message;
-        this.closedSub =  compRef.instance.closed.subscribe(()=>{
-           this.closedSub.unsubscribe();
-           HostviewContainerRef.clear();
-        })
+    // showError(message : string){
+    //   const alertCmpFactory=      this.componentFactoryResolver.resolveComponentFactory(AlertComponent);
+    //   const HostviewContainerRef = this.alertHost.viewContainerRef;
+    //   HostviewContainerRef.clear();
+    //     const compRef =  HostviewContainerRef.createComponent(alertCmpFactory);
+    //     compRef.instance.message = message;
+    //     this.closedSub =  compRef.instance.closed.subscribe(()=>{
+    //        this.closedSub.unsubscribe();
+    //        HostviewContainerRef.clear();
+    //     })
 
-    }
+    // }
 
     ngOnDestroy(): void {
         if(this.closedSub){

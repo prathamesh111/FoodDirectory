@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,20 +10,17 @@ import {ButtonModule} from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ShoppingListService } from './shopping-list/shoppingList.service';
-import { RecipieService } from './recipies/recipies.service';
-import {AuthComponent} from './auth/auth.component';
-import { AuthInterceptorService } from './auth/auth-interceptor';
 import { RecipiesModule } from './recipies/recipies.module';
 import { ShoppingListModule } from './shopping-list/shoppingList.module';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AuthComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,14 +30,15 @@ import { SharedModule } from './shared/shared.module';
     DropdownModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     RecipiesModule,
     ShoppingListModule,
-    SharedModule
+    SharedModule,
+    AuthModule,
+    CoreModule,
   ],
-  providers: [ShoppingListService,RecipieService, {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptorService, multi:true}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
