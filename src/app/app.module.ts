@@ -12,6 +12,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { ShoppingListService } from './shopping-list/shoppingList.service';
 import { RecipieService } from './recipies/recipies.service';
 import {AuthComponent} from './auth/auth.component';
@@ -20,11 +21,16 @@ import { RecipiesModule } from './recipies/recipies.module';
 import { ShoppingListModule } from './shopping-list/shoppingList.module';
 import { SharedModule } from './shared/shared.module';
 =======
+=======
+>>>>>>> parent of 3c7fe47 (Laxy loading implemented)
 import { RecipiesModule } from './recipies/recipies.module';
 import { ShoppingListModule } from './shopping-list/shoppingList.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
 import { AuthModule } from './auth/auth.module';
+<<<<<<< HEAD
+>>>>>>> parent of 3c7fe47 (Laxy loading implemented)
+=======
 >>>>>>> parent of 3c7fe47 (Laxy loading implemented)
 
 
