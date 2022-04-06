@@ -13,7 +13,7 @@ import { PlaceHolderDirective } from "./placeholder/placeholder.directive";
         DropdownDirective 
     ],
     imports:[
-        CommonModule,
+        CommonModule
     ],
     exports : [
         AlertComponent,
