@@ -9,9 +9,12 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecipiesModule } from './recipies/recipies.module';
+import { ShoppingListModule } from './shopping-list/shoppingList.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { CoreModule } from './core.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    RecipiesModule,
+    ShoppingListModule,
     SharedModule,
+    AuthModule,
     CoreModule,
   ],
   providers: [],
