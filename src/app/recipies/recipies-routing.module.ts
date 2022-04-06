@@ -8,7 +8,7 @@ import { RecipeResolverService } from "./recipies-resolver.service";
 import { RecipiesComponent } from "./recipies.component";
 
 const routes : Routes= [
-    {path:'', component:RecipiesComponent, canActivate:[AuthGuard], children:[
+    {path:'recipies', component:RecipiesComponent, canActivate:[AuthGuard], children:[
         {path:'', component:RecipeStartComponent},
         {path:'new', component:RecipeEditComponent},
         {path:':id', component:RecipieDetailsComponent, resolve:[RecipeResolverService]},
