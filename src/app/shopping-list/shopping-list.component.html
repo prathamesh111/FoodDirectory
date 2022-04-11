@@ -5,7 +5,7 @@
         <p>The List</p>
         <ul class="list-group">
             <a *ngFor="let ingredient of (ingredients | async).ingredients; let i=index" class="list-group-item" (click)="onEdit(i)">
-                {{ingredient.name}} ({{ingredient.amount}}) 
+                    {{ingredient.name}} ({{ingredient.amount}}) 
             </a>
         </ul>
     </div>
