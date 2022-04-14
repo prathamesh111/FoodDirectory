@@ -33,7 +33,7 @@ import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer
     SharedModule,
     AuthModule,
     CoreModule,
-    StoreModule.forRoot({ShoppingList: shoppingListReducer})
+    StoreModule.forRoot({shoppingList: shoppingListReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
