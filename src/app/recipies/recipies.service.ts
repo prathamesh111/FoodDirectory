@@ -5,11 +5,12 @@ import { Subject } from "rxjs/Subject";
 import {Store} from '@ngrx/store';
 import * as SlActions from "../shopping-list/store/shopping-list.actions";
 import * as fromShoppingList from '../shopping-list/store/shopping-list.reducer';
+import * as fromAppReducer from '../store/app.reducer'
 @Injectable()
 export class RecipieService{
 
 recepiesChanged = new Subject<Recipe[]>();
- constructor( private Store:Store<fromShoppingList.AppState>){}
+ constructor( private Store:Store<fromAppReducer.AppState>){}
 
 //  private recipies : Recipe[] = [
 //     new Recipe('recipe1',

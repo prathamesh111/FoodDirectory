@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as ShoppingListActions from '../store/shopping-list.actions';
 import * as fromShopppingList from  '../store/shopping-list.reducer';
+import * as fromAppReducer from '../../store/app.reducer'
 @Component({
   selector: 'app-shopping-list-edit',
   templateUrl: './shopping-list-edit.component.html',
@@ -20,7 +21,7 @@ EditSubscription:Subscription;
 editMode = false;
 editeditem : Ingredients;
 
-constructor(private store: Store<fromShopppingList.AppState> ) { }
+constructor(private store: Store<fromAppReducer.AppState> ) { }
 
 ngOnInit() {
 
