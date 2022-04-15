@@ -38,7 +38,6 @@ export function shoppingListReducer(state:State = initialState, action: Shopping
             
         case ShoppingListActions.UPDATE_INGREDIENTS:
             const newIngred = state.ingredients[state.EditedItemIndex];
-            // console.log("new ingred" +newIngred);
             const updatedIngredient = {
                 ...newIngred, 
                 ...action.payload

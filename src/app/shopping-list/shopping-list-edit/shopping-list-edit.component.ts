@@ -26,7 +26,6 @@ ngOnInit() {
 
   this.EditSubscription= this.store.select('shoppingList').subscribe(stateData => {
     if(stateData.EditedItemIndex > -1){
-      console.log("editItem" + this.editMode);
       this.editMode= true;
       this.editeditem = stateData.editedIngredient;
       this.slForm.setValue({
@@ -36,7 +35,6 @@ ngOnInit() {
     }
     else{
       this.editMode= false;
-      console.log("editItem" + this.editMode);
 
     }
   })
