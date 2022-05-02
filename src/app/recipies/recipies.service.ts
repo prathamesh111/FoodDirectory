@@ -9,6 +9,7 @@ import * as fromShoppingList from '../shopping-list/store/shopping-list.reducer'
 export class RecipieService{
 
 recepiesChanged = new Subject<Recipe[]>();
+private recipies : Recipe[] = [];
  constructor( private Store:Store<fromShoppingList.AppState>){}
 
 //  private recipies : Recipe[] = [
@@ -31,8 +32,6 @@ recepiesChanged = new Subject<Recipe[]>();
             
 //         ]),
 //   ];
-
-private recipies : Recipe[] = [];
 
   setRecipies(recepie : Recipe[]){
     this.recipies = recepie;
