@@ -63,6 +63,6 @@ private recipies : Recipe[] = [];
   deleteRecipe(id){
     this.recipies.splice(id, 1);
     this.recepiesChanged.next(this.recipies.slice());
-    console.log(this.recipies);
+    // console.log(this.recipies);
   }
 }
