@@ -11,7 +11,7 @@ export class RecipieItemComponent implements OnInit {
  @Input() recipe : Recipe;
  @Input() index : number; 
 
- constructor( private recipeService : RecipieService) { }
+ constructor() { }
 
   ngOnInit(): void {
   }
