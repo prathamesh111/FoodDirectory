@@ -27,6 +27,7 @@ export class RecipieDetailsComponent implements OnInit {
     this.route.params
     .subscribe(
       (params : Params) => {
+        console.log("params"+ JSON.stringify(params))
         this.id = +params['id'];
         this.recipe = this.RecipieService.getRecipe(this.id);
       }
