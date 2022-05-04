@@ -91,7 +91,7 @@ get controls() { // a getter!
   }""
 
   onCancel(){
-    this.router.navigate(['../', {relativeTo: this.route}]);
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 
   onDeleteIngred(index: number){
