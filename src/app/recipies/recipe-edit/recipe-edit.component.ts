@@ -33,6 +33,14 @@ export class RecipeEditComponent implements OnInit {
     let recDescription = "";
     let recipeIngredients = new FormArray([]);
 
+    // Form initialization
+    this.recipeForm = new FormGroup({
+      name : new FormControl(recipeName, Validators.required),
+      imagepath: new FormControl(imagePath, Validators.required),
+      description : new FormControl(recDescription, Validators.required),
+      ingredients : recipeIngredients,
+    });
+
 
     if(this.editMode){
      const currentRecipe = this.RecipieService.getRecipe(this.id);
@@ -50,16 +58,11 @@ export class RecipeEditComponent implements OnInit {
         });
       } 
     }
-    this.recipeForm = new FormGroup({
-      name : new FormControl(recipeName, Validators.required),
-      imagepath: new FormControl(imagePath, Validators.required),
-      description : new FormControl(recDescription, Validators.required),
-      ingredients : recipeIngredients,
-    });
+
 
 }
 
-get controls() { // a getter!
+get controlss() { // a getter!
   return (<FormArray>this.recipeForm.get('ingredients')).controls;
 }
 
