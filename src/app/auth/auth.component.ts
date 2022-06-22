@@ -16,7 +16,7 @@ export class AuthComponent implements OnDestroy{
     isLoginMode = true;
     isLoading:boolean = false;
     error : string =null;
-    customError : string ;
+    customError : string ;      
 
     private closedSub : Subscription;
     @ViewChild(PlaceHolderDirective) alertHost : PlaceHolderDirective;
@@ -50,7 +50,6 @@ export class AuthComponent implements OnDestroy{
             this.error = errorMessage;
             console.log(this.error); 
             this.isLoading = false;
-            // this.showError(errorMessage);
         });
 
         form.reset();
