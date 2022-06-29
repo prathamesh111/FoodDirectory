@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnDestroy, ViewChild } from '@angular/core';
 import { Ingredients } from '../../shared/ingredients.model';
-import { FormControl, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as ShoppingListActions from '../store/shopping-list.actions';
@@ -23,10 +23,8 @@ editeditem : Ingredients;
 constructor(private store: Store<fromShopppingList.AppState> ) { }
 
 ngOnInit() {
-
   this.EditSubscription= this.store.select('shoppingList').subscribe(stateData => {
     if(stateData.EditedItemIndex > -1){
-      console.log("editItem" + this.editMode);
       this.editMode= true;
       this.editeditem = stateData.editedIngredient;
       this.slForm.setValue({
@@ -40,7 +38,6 @@ ngOnInit() {
 
     }
   })
-    
   } 
 
   onAddItem(form:NgForm){
@@ -56,7 +53,6 @@ ngOnInit() {
     }
     this.editMode= false;
     this.slForm.reset();
-
   }
 
   onClear(){
@@ -77,7 +73,5 @@ ngOnInit() {
     this.EditSubscription.unsubscribe();
     this.store.dispatch(new ShoppingListActions.StopEdit());
 }
- 
-
 }
 

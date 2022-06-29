@@ -11,7 +11,7 @@ import * as fromShoppingListActions  from './store/shopping-list.actions'
   styleUrls: ['./shopping-list.component.css'],
 })
 export class ShoppingListComponent implements OnInit  {
-  ingredients : Observable<{ingredients : Ingredients[]}> ;
+  ingredients : Observable<{ingredients : Ingredients[]}>;
 
   constructor( private store : Store<fromShoppingList.AppState> ) { }
 
@@ -19,15 +19,9 @@ export class ShoppingListComponent implements OnInit  {
   this.ingredients = this.store.select('shoppingList');
   // this.store.subscribe(statee => console.log({ statee }));
   }
-
-
+  
   onEdit(index:number){
     // this.ShoppingListService.startedEditing.next(index);
     this.store.dispatch( new fromShoppingListActions.StartEdit(index));
   }
-
-
-
- 
-
 }
